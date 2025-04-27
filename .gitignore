@@ -1,4 +1,12 @@
-# Java
+# Eclipse specific
+.metadata/
+.plugins/
+.recommenders/
+.settings/
+.project
+.classpath
+
+# Java (Generados por compilación y empaquetado)
 *.class
 *.jar
 *.war
@@ -9,26 +17,23 @@
 *.rar
 *.log
 *.jmh
-*.project
 hs_err_pid*
 replay_pid*
 *.hprof
 
-
+# Directorios de construcción comunes
 target/
 build/
 bin/
 
-# Eclipse specific
-.settings/
-# Intellij specific
-.idea
+# Intellij specific (Por si alguno de tus compañeros usa IntelliJ)
+.idea/
 *.iml
 *.ipr
 *.iws
 out/
 
-# Haskell
+# Haskell (Por si acaso hay archivos de Haskell en el proyecto)
 *.hi
 *.o
 *.dyn_hi
@@ -44,12 +49,12 @@ cabal.project.freeze~
 .stack-work/
 .stack-work/*
 
-# Prolog
+# Prolog (Por si acaso hay archivos de Prolog en el proyecto)
 *.qlf
 *.sav
 *.db
 
-# Common files
+# Common files (Archivos temporales, de sistema operativo, etc.)
 *.log
 *.tmp
 *.temp

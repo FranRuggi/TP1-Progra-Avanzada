@@ -1,4 +1,3 @@
-# TP1-Progra-Avanzada
 # Filtros de convolución a la imagen:
 
 ---

@@ -5,6 +5,7 @@ import java.io.IOException;
 import pgmImage.PGMImage;
 
 public class ImageFilter {
+	
     public static PGMImage applyFilter(PGMImage img, int[][] kernel) {
         int height = img.height;
         int width = img.width;
@@ -29,7 +30,6 @@ public class ImageFilter {
     }
 }
 
-// Pequeña modificación a PGMImage para soportar construcción manual
 class PGMImageManual extends PGMImage {
     public PGMImageManual(int width, int height, int maxValue, int[][] pixels) throws IOException {
         super("");

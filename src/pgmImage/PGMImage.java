@@ -32,11 +32,11 @@ public class PGMImage {
         while (sc.hasNext("#")) { // Saltear comentarios
             sc.nextLine();
         }
-
+        //Traemos el ancho, alto y el maximo valor de caracter que tendra la imagen
         width = sc.nextInt();
         height = sc.nextInt();
         maxValue = sc.nextInt();
-
+        //Luego cargamos cada uno de esos valores en una matriz bidimensional
         pixels = new int[height][width];
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
@@ -46,6 +46,7 @@ public class PGMImage {
         sc.close();
     }
 
+	//Escribimos la imagen teniendo en cuenta los parametros de las imagenes PGM P2
     public void write(String filename) throws IOException {
         PrintWriter pw = new PrintWriter(new FileOutputStream(filename));
         pw.println("P2");

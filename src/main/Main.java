@@ -18,27 +18,27 @@ public class Main {
         };
 
         int[][] sobelHorizontalKernel = {
+        		{-1, 0, 1},
+                {-2, 0, 2},
+                {-1, 0, 1}
+        };
+
+        int[][] sobelVerticalKernel = {
                 {-1, -2, -1},
                 {0, 0, 0},
                 {1, 2, 1}
         };
 
-        int[][] sobelVerticalKernel = {
-                {-1, 0, 1},
-                {-2, 0, 2},
-                {-1, 0, 1}
-        };
-
         int[][] prewittHorizontalKernel = {
-                {-1, -1, -1},
-                {0, 0, 0},
-                {1, 1, 1}
+        		{-1, 0, 1},
+                {-1, 0, 1},
+                {-1, 0, 1}
         };
 
         int[][] prewittVerticalKernel = {
-                {-1, 0, 1},
-                {-1, 0, 1},
-                {-1, 0, 1}
+                {-1, -1, -1},
+                {0, 0, 0},
+                {1, 1, 1}
         };
 
         int[][] laplacianKernel = {

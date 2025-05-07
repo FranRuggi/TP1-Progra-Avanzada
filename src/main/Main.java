@@ -1,8 +1,7 @@
 
 package main;
-import java.io.IOException;
-
 import imageFilter.ImageFilter;
+import java.io.IOException;
 import pgmImage.PGMImage;
 
 public class Main {
@@ -12,13 +11,13 @@ public class Main {
 
         // Definimos los kernels
         int[][] blurKernel = {
-                {1, 1, 1},
-                {1, 1, 1},
-                {1, 1, 1}
+                {1/9, 1/9, 1/9},
+                {1/9, 1/9, 1/9},
+                {1/9, 1/9, 1/9}
         };
 
         int[][] sobelHorizontalKernel = {
-        		{-1, 0, 1},
+        	{-1, 0, 1},
                 {-2, 0, 2},
                 {-1, 0, 1}
         };
@@ -30,7 +29,7 @@ public class Main {
         };
 
         int[][] prewittHorizontalKernel = {
-        		{-1, 0, 1},
+        	{-1, 0, 1},
                 {-1, 0, 1},
                 {-1, 0, 1}
         };

@@ -11,9 +11,9 @@ public class Main {
 
         // Definimos los kernels
         int[][] blurKernel = {
-                {1/9, 1/9, 1/9},
-                {1/9, 1/9, 1/9},
-                {1/9, 1/9, 1/9}
+                {1, 1, 1},
+                {1, 1, 1},
+                {1, 1, 1}
         };
 
         int[][] sobelHorizontalKernel = {

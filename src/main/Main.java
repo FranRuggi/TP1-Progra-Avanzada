@@ -2,90 +2,131 @@
 package main;
 import java.io.IOException;
 
+import Filtros.FiltroKernel;
 import imageFilter.ImageFilter;
 import pgmImage.PGMImage;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-    	String ruta = new String("C:/Users/living/Downloads/imagenes/");
+    	String ruta = new String("C:/Users/Francisco/Mi unidad/Programación Avanzada/TP1-Progra-Avanzada/TP1-Progra-Avanzada/imagenes/");
     	
-        PGMImage originalImage = new PGMImage(ruta + "Ajedrez.pgm");
+        PGMImage originalImage360 = new PGMImage(ruta + "Darth_Vader_360x360.pgm");
+        PGMImage originalImage720 = new PGMImage(ruta + "Darth_Vader_1280x720.pgm");
+        PGMImage originalImage1080 = new PGMImage(ruta + "Darth_Vader_1980x1080.pgm");
 
-        // Definimos los kernels
-        int[][] blurKernel = {
-                {1, 1, 1, 1, 1},
-                {1, 1, 1, 1, 1},
-                {1, 1, 1, 1, 1},
-                {1, 1, 1, 1, 1},
-                {1, 1, 1, 1, 1}
-        };
-
-        int[][] sobelHorizontalKernel = {
-        		{-1, 0, 1},
-                {-2, 0, 2},
-                {-1, 0, 1}
-        };
-
-        int[][] sobelVerticalKernel = {
-                {-1, -2, -1},
-                {0, 0, 0},
-                {1, 2, 1}
-        };
-
-        int[][] prewittHorizontalKernel = {
-        		{-1, 0, 1},
-                {-1, 0, 1},
-                {-1, 0, 1}
-        };
-
-        int[][] prewittVerticalKernel = {
-        		{-2, -2, -4,-2, -2},
-                {-1, -1, -2, -1, -1},
-                {0, 0, 0, 0, 0},
-                {1, 1, 2, 1, 1},
-                {2, 2, 4, 2, 2}
-        };
-
-        int[][] laplacianKernel = {
-                {0, 1, 0},
-                {1, -4, 1},
-                {0, 1, 0}
-        };
-
-        int[][] embossKernel = {
-                {-2, -1, 0},
-                {-1, 1, 1},
-                {0, 1, 2}
-        };
-
+        //Para tomar tiempos
+        
+        double inicio;
+        double fin;
+        double duracion;
+        
         // Aplicamos cada filtro y guardamos la imagen resultante
-        PGMImage blurredImage = ImageFilter.applyFilter(originalImage, blurKernel);
-        blurredImage.write(ruta + "imagetest_blur.pgm");
-        System.out.println("Imagen con filtro de suavizado guardada como 'C:/Users/living/Downloads/imagenes/imagetest_blur.pgm'.");
+        
+        //SOBEL
+        
+//        inicio = System.nanoTime();
+//        PGMImage sobelHorizontalImage = ImageFilter.applyFilter(originalImage360, FiltroKernel.getSobelHorizontalKernel3x3());
+//        sobelHorizontalImage.write(ruta + "Z_imagen360_sobel_horizontal3x3.pgm");
+//        fin = System.nanoTime();
+//        duracion = (fin - inicio)/1000000000;
+//        System.out.println("Imagen con filtro Sobel horizontal guardada como 'Z_imagen360_sobel_horizontal3x3.pgm'. Tiempo: " + duracion + "s");
+//
+//        inicio = System.nanoTime();
+//        PGMImage sobelVerticalImage = ImageFilter.applyFilter(originalImage360, FiltroKernel.getSobelVerticalKernel3x3());
+//        sobelVerticalImage.write(ruta + "Z_imagen360_sobel_vertical3x3.pgm");
+//        fin = System.nanoTime();
+//        duracion = (fin - inicio)/1000000000;
+//        System.out.println("Imagen con filtro Sobel vertical guardada como 'Z_imagen360_sobel_vertical3x3.pgm'. Tiempo: " + duracion + "s");
 
-        PGMImage sobelHorizontalImage = ImageFilter.applyFilter(originalImage, sobelHorizontalKernel);
-        sobelHorizontalImage.write(ruta + "imagetest_sobel_horizontal.pgm");
-        System.out.println("Imagen con filtro Sobel horizontal guardada como 'C:/Users/living/Downloads/imagenes/imagetest_sobel_horizontal.pgm'.");
+        //PREWITT
+        
+//        inicio = System.nanoTime();
+//        PGMImage prewittHorizontalImage = ImageFilter.applyFilter(originalImage360, FiltroKernel.getPrewittHorizontalKernel3x3());
+//        prewittHorizontalImage.write(ruta + "Z_imagen360_prewitt_horizontal3x3.pgm");
+//        fin = System.nanoTime();
+//        duracion = (fin - inicio)/1000000000;
+//        System.out.println("Imagen con filtro Prewitt horizontal guardada como 'Z_imagen360_prewitt_horizontal3x3.pgm'. Tiempo: " + duracion + "s");
+//
+//        inicio = System.nanoTime();
+//        PGMImage prewittVerticalImage = ImageFilter.applyFilter(originalImage360, FiltroKernel.getPrewittVerticalKernel5x5());
+//        prewittVerticalImage.write(ruta + "Z_imagen360_prewitt_vertical5x5.pgm");
+//        fin = System.nanoTime();
+//        duracion = (fin - inicio)/1000000000;
+//        System.out.println("Imagen con filtro Prewitt vertical guardada como 'Z_imagen360_prewitt_vertical5x5.pgm'. Tiempo: " + duracion + "s");
 
-        PGMImage sobelVerticalImage = ImageFilter.applyFilter(originalImage, sobelVerticalKernel);
-        sobelVerticalImage.write(ruta + "imagetest_sobel_vertical.pgm");
-        System.out.println("Imagen con filtro Sobel vertical guardada como 'C:/Users/living/Downloads/imagenes/imagetest_sobel_vertical.pgm'.");
+        //LAPLACIAN
+        
+//        inicio = System.nanoTime();
+//        PGMImage laplacianImage = ImageFilter.applyFilter(originalImage360, FiltroKernel.getLaplacianKernel3x3());
+//        laplacianImage.write(ruta + "Z_imagen360_laplacian3x3.pgm");
+//        fin = System.nanoTime();
+//        duracion = (fin - inicio)/1000000000;
+//        System.out.println("Imagen con filtro Laplaciano guardada como 'Z_imagen360_laplacian3x3.pgm'. Tiempo: " + duracion + "s");        
+        
+        //BLUR 360x360
+        
+        inicio = System.nanoTime();
+        PGMImage blurredImage = ImageFilter.applyFilter(originalImage360, FiltroKernel.getBlurKernel3x3());
+        blurredImage.write(ruta + "Z_imagen360_blur3x3.pgm");
+        fin = System.nanoTime();
+        duracion = (fin - inicio)/1000000000;
+        System.out.println("Imagen con filtro de suavizado guardada como 'Z_imagen360_blur3x3.pgm'. Tiempo: " + duracion + "s");
 
-        PGMImage prewittHorizontalImage = ImageFilter.applyFilter(originalImage, prewittHorizontalKernel);
-        prewittHorizontalImage.write(ruta + "imagetest_prewitt_horizontal.pgm");
-        System.out.println("Imagen con filtro Prewitt horizontal guardada como 'C:/Users/living/Downloads/imagenes/imagetest_prewitt_horizontal.pgm'.");
+        inicio = System.nanoTime();
+        blurredImage = ImageFilter.applyFilter(originalImage360, FiltroKernel.getBlurKernel5x5());
+        blurredImage.write(ruta + "Z_imagen360_blur5x5.pgm");
+        fin = System.nanoTime();
+        duracion = (fin - inicio)/1000000000;
+        System.out.println("Imagen con filtro de suavizado guardada como 'Z_imagen360_blur5x5.pgm'. Tiempo: " + duracion + "s");
+                
+        inicio = System.nanoTime();
+        blurredImage = ImageFilter.applyFilter(originalImage360, FiltroKernel.getBlurKernel9x9());
+        blurredImage.write(ruta + "Z_imagen360_blur9x9.pgm");
+        fin = System.nanoTime();
+        duracion = (fin - inicio)/1000000000;
+        System.out.println("Imagen con filtro de suavizado guardada como 'Z_imagen360_blur9x9.pgm'. Tiempo: " + duracion + "s");
 
-        PGMImage prewittVerticalImage = ImageFilter.applyFilter(originalImage, prewittVerticalKernel);
-        prewittVerticalImage.write(ruta + "imagetest_prewitt_vertical.pgm");
-        System.out.println("Imagen con filtro Prewitt vertical guardada como 'C:/Users/living/Downloads/imagenes/imagetest_prewitt_vertical.pgm'.");
+        //BLURR 1280x720 9x9
+        
+        inicio = System.nanoTime();
+        blurredImage = ImageFilter.applyFilter(originalImage720, FiltroKernel.getBlurKernel9x9());
+        blurredImage.write(ruta + "Z_imagen720_blur9x9.pgm");
+        fin = System.nanoTime();
+        duracion = (fin - inicio)/1000000000;
+        System.out.println("Imagen con filtro de suavizado guardada como 'Z_imagen720_blur9x9.pgm'. Tiempo: " + duracion + "s");
+        
+        //BLURR 1920x1080 9x9
+        
+        inicio = System.nanoTime();
+        blurredImage = ImageFilter.applyFilter(originalImage1080, FiltroKernel.getBlurKernel9x9());
+        blurredImage.write(ruta + "Z_imagen1080_blur9x9.pgm");
+        fin = System.nanoTime();
+        duracion = (fin - inicio)/1000000000;
+        System.out.println("Imagen con filtro de suavizado guardada como 'Z_imagen1080_blur9x9.pgm'. Tiempo: " + duracion + "s");
+        
+        //EMBOSS 360x360
+        
+        inicio = System.nanoTime();
+        PGMImage embossImage = ImageFilter.applyFilter(originalImage360, FiltroKernel.getEmbossKernel3x3());
+        embossImage.write(ruta + "Z_imagen360_emboss3x3.pgm");
+        fin = System.nanoTime();
+        duracion = (fin - inicio)/1000000000;
+        System.out.println("Imagen con filtro de repujado guardada como 'Z_imagen360_emboss3x3.pgm'. Tiempo: " + duracion + "s");
+        
+        inicio = System.nanoTime();
+        embossImage = ImageFilter.applyFilter(originalImage360, FiltroKernel.getEmbossKernel5x5());
+        embossImage.write(ruta + "Z_imagen360_emboss5x5.pgm");
+        fin = System.nanoTime();
+        duracion = (fin - inicio)/1000000000;
+        System.out.println("Imagen con filtro de repujado guardada como 'Z_imagen360_emboss5x5.pgm'. Tiempo: " + duracion + "s");
+        
+        inicio = System.nanoTime();
+        embossImage = ImageFilter.applyFilter(originalImage360, FiltroKernel.getEmbossKernel9x9());
+        embossImage.write(ruta + "Z_imagen360_emboss9x9.pgm");
+        fin = System.nanoTime();
+        duracion = (fin - inicio)/1000000000;
+        System.out.println("Imagen con filtro de repujado guardada como 'Z_imagen360_emboss9x9.pgm'. Tiempo: " + duracion + "s");
 
-        PGMImage laplacianImage = ImageFilter.applyFilter(originalImage, laplacianKernel);
-        laplacianImage.write(ruta + "imagetest_laplacian.pgm");
-        System.out.println("Imagen con filtro Laplaciano guardada como 'C:/Users/living/Downloads/imagenes/imagetest_laplacian.pgm'.");
-
-        PGMImage embossImage = ImageFilter.applyFilter(originalImage, embossKernel);
-        embossImage.write(ruta + "imagetest_emboss.pgm");
-        System.out.println("Imagen con filtro de repujado guardada como 'C:/Users/living/Downloads/imagenes/imagetest_emboss.pgm'.");
     }
 }

@@ -25,44 +25,44 @@ public class Main {
         
         //SOBEL
         
-//        inicio = System.nanoTime();
-//        PGMImage sobelHorizontalImage = ImageFilter.applyFilter(originalImage360, FiltroKernel.getSobelHorizontalKernel3x3());
-//        sobelHorizontalImage.write(ruta + "Z_imagen360_sobel_horizontal3x3.pgm");
-//        fin = System.nanoTime();
-//        duracion = (fin - inicio)/1000000000;
-//        System.out.println("Imagen con filtro Sobel horizontal guardada como 'Z_imagen360_sobel_horizontal3x3.pgm'. Tiempo: " + duracion + "s");
-//
-//        inicio = System.nanoTime();
-//        PGMImage sobelVerticalImage = ImageFilter.applyFilter(originalImage360, FiltroKernel.getSobelVerticalKernel3x3());
-//        sobelVerticalImage.write(ruta + "Z_imagen360_sobel_vertical3x3.pgm");
-//        fin = System.nanoTime();
-//        duracion = (fin - inicio)/1000000000;
-//        System.out.println("Imagen con filtro Sobel vertical guardada como 'Z_imagen360_sobel_vertical3x3.pgm'. Tiempo: " + duracion + "s");
+        inicio = System.nanoTime();
+        PGMImage sobelHorizontalImage = ImageFilter.applyFilter(originalImage360, FiltroKernel.getSobelHorizontalKernel3x3());
+        sobelHorizontalImage.write(ruta + "Z_imagen360_sobel_horizontal3x3.pgm");
+        fin = System.nanoTime();
+        duracion = (fin - inicio)/1000000000;
+        System.out.println("Imagen con filtro Sobel horizontal guardada como 'Z_imagen360_sobel_horizontal3x3.pgm'. Tiempo: " + duracion + "s");
+
+        inicio = System.nanoTime();
+        PGMImage sobelVerticalImage = ImageFilter.applyFilter(originalImage360, FiltroKernel.getSobelVerticalKernel3x3());
+        sobelVerticalImage.write(ruta + "Z_imagen360_sobel_vertical3x3.pgm");
+        fin = System.nanoTime();
+        duracion = (fin - inicio)/1000000000;
+        System.out.println("Imagen con filtro Sobel vertical guardada como 'Z_imagen360_sobel_vertical3x3.pgm'. Tiempo: " + duracion + "s");
 
         //PREWITT
         
-//        inicio = System.nanoTime();
-//        PGMImage prewittHorizontalImage = ImageFilter.applyFilter(originalImage360, FiltroKernel.getPrewittHorizontalKernel3x3());
-//        prewittHorizontalImage.write(ruta + "Z_imagen360_prewitt_horizontal3x3.pgm");
-//        fin = System.nanoTime();
-//        duracion = (fin - inicio)/1000000000;
-//        System.out.println("Imagen con filtro Prewitt horizontal guardada como 'Z_imagen360_prewitt_horizontal3x3.pgm'. Tiempo: " + duracion + "s");
-//
-//        inicio = System.nanoTime();
-//        PGMImage prewittVerticalImage = ImageFilter.applyFilter(originalImage360, FiltroKernel.getPrewittVerticalKernel5x5());
-//        prewittVerticalImage.write(ruta + "Z_imagen360_prewitt_vertical5x5.pgm");
-//        fin = System.nanoTime();
-//        duracion = (fin - inicio)/1000000000;
-//        System.out.println("Imagen con filtro Prewitt vertical guardada como 'Z_imagen360_prewitt_vertical5x5.pgm'. Tiempo: " + duracion + "s");
+        inicio = System.nanoTime();
+        PGMImage prewittHorizontalImage = ImageFilter.applyFilter(originalImage360, FiltroKernel.getPrewittHorizontalKernel3x3());
+        prewittHorizontalImage.write(ruta + "Z_imagen360_prewitt_horizontal3x3.pgm");
+        fin = System.nanoTime();
+        duracion = (fin - inicio)/1000000000;
+        System.out.println("Imagen con filtro Prewitt horizontal guardada como 'Z_imagen360_prewitt_horizontal3x3.pgm'. Tiempo: " + duracion + "s");
+
+        inicio = System.nanoTime();
+        PGMImage prewittVerticalImage = ImageFilter.applyFilter(originalImage360, FiltroKernel.getPrewittVerticalKernel5x5());
+        prewittVerticalImage.write(ruta + "Z_imagen360_prewitt_vertical5x5.pgm");
+        fin = System.nanoTime();
+        duracion = (fin - inicio)/1000000000;
+        System.out.println("Imagen con filtro Prewitt vertical guardada como 'Z_imagen360_prewitt_vertical5x5.pgm'. Tiempo: " + duracion + "s");
 
         //LAPLACIAN
         
-//        inicio = System.nanoTime();
-//        PGMImage laplacianImage = ImageFilter.applyFilter(originalImage360, FiltroKernel.getLaplacianKernel3x3());
-//        laplacianImage.write(ruta + "Z_imagen360_laplacian3x3.pgm");
-//        fin = System.nanoTime();
-//        duracion = (fin - inicio)/1000000000;
-//        System.out.println("Imagen con filtro Laplaciano guardada como 'Z_imagen360_laplacian3x3.pgm'. Tiempo: " + duracion + "s");        
+        inicio = System.nanoTime();
+        PGMImage laplacianImage = ImageFilter.applyFilter(originalImage360, FiltroKernel.getLaplacianKernel3x3());
+        laplacianImage.write(ruta + "Z_imagen360_laplacian3x3.pgm");
+        fin = System.nanoTime();
+        duracion = (fin - inicio)/1000000000;
+        System.out.println("Imagen con filtro Laplaciano guardada como 'Z_imagen360_laplacian3x3.pgm'. Tiempo: " + duracion + "s");        
         
         //BLUR 360x360
         

@@ -28,7 +28,7 @@ public class ImageFilter {
 					}
 				}
 				// Normalizamos si el kernel suma algo (ej: blur) y evitamos dividir por 0
-				if (kernelSum != 0) {
+				if (kernelSum != 0 && kernelSum != 1) {
 					sum /= kernelSum;
 				}
 
